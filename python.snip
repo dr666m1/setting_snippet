@@ -45,7 +45,7 @@ snippet alt_point
 	chart.mark_point().encode(
 		x="",
 		y="",
-	).inreractive.save("chart.html")
+	).interactive().save("chart.html")
 snippet alt_point_with_label
 	chart = alt.Chart(${0})
 	chart.mark_point().encode(
@@ -54,7 +54,8 @@ snippet alt_point_with_label
 		tooltip=[""]
 	)
 snippet alt_line
-	chart = alt.Chart(${0}).mark_line().encode(
+	chart = alt.Chart(${0})
+	chart.mark_line().encode(
 		x="",
 		y="",
 	).interactive().save("chart.html")
@@ -104,7 +105,7 @@ snippet requests_post
 	url = "${1:<<url>>}"
 	payload = {}
 	headers = {}
-	res = requests.get(url, data=payload, headers=headers)
+	res = requests.post(url, data=payload, headers=headers)
 	#res.encoding = "utf-8"
 # pyspark
 snippet init_spark
@@ -113,6 +114,8 @@ snippet init_spark
 	sc = SparkContext(conf = conf)
 	${0}
 # datetime
-snippet dt_now
+snippet datetime_now
 	datetime.datetime.now()${0:.strftime("%Y-%m-%d")}
+snippet datetime_today
+	datetime.date.today()${0:.strftime("%Y-%m-%d")}
 include python_local.snip
