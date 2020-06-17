@@ -98,8 +98,9 @@ snippet lxml_html
 # requests
 snippet requests_get
 	url = "${1:<<url>>}"
+	headers = {}
 	payload = {}
-	res = requests.get(url, params=payload)
+	res = requests.get(url, headers=headers, params=payload)
 	#res.encoding = "utf-8"
 snippet requests_post
 	url = "${1:<<url>>}"
