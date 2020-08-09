@@ -36,4 +36,4 @@ snippet bq_query
 snippet sec
 	#===== ${0} =====
 snippet bq_load
-	bq load ${1:--autodetect }--skip_leading_rows ${2:0} ${3:<<dataset>>}.${4:<<table>>} ${5:<<file path>>} ${0:col1:string,col2:int64}
+	bq load ${1:--autodetect }--skip_leading_rows ${2:0} ${3:<<project:>>}${4:<<dataset.>>}${5:<<table>>} ${6:<<file path>>} ${0:col1:string,col2:int64}

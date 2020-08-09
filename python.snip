@@ -80,6 +80,8 @@ snippet pd_offsets
 	pd.tseries.offset.${0:<<Day>>}()
 snippet pd_to_csv
 	${1:<<DataFrame>>}.to_csv(${0:<<file_name>>}, header=True, index=False)
+snippet pd_read
+	pd.read_csv(${0:<<file_name>>})
 snippet init_bq
 	import pandas  as pd
 	query = """
@@ -87,6 +89,8 @@ snippet init_bq
 	"""
 	df = pd.read_gbq(query, "${1:<<project_id>>}", dialect="standard")
 	# credential is saved as ~/.config/pandas_gbq/bigquery_credentials.dat
+snippet pd_concat()
+	pd.concat(${0:<<array of dataframe>>}, ignore_index=True)
 # lxml
 snippet lxml_html
 	import requests
